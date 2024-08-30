@@ -72,21 +72,46 @@ function displayCurrentWeather(data) {
 
 // Function to fetch and display 5-day weather forecast
 async function fetchForecast(city) {
-    const response = await fetch(apiurlForecast + city + `&appid=${apikey}`);
+    const response = await fetch(apiurlForecast + city + `&appid=${apikey}&units=metric`);
     const data = await response.json();
 
     const forecastHTML = data.list.map(forecast => {
         const date = new Date(forecast.dt_txt);
+
+        // Determine which weather icon to use based on the weather condition
+        let weatherIcon;
+        switch (forecast.weather[0].main) {
+            case "Clouds":
+                weatherIcon = "images/cloudy.png";
+                break;
+            case "Clear":
+                weatherIcon = "images/clear.png";
+                break;
+            case "Rain":
+                weatherIcon = "images/rain.png";
+                break;
+            case "Drizzle":
+                weatherIcon = "images/drizzle.png";
+                break;
+            case "Mist":
+            case "Haze":
+                weatherIcon = "images/mist.png";
+                break;
+            default:
+                weatherIcon = "images/default.png"; // Fallback for any other weather conditions
+        }
+
         return `
             <div class="forecast-item">
                 <p>${date.toDateString()} ${date.toLocaleTimeString()}</p>
+                <img src="${weatherIcon}" alt="${forecast.weather[0].main}">
                 <p>Temperature: ${Math.round(forecast.main.temp)}°C</p>
                 <p>Weather: ${forecast.weather[0].main}</p>
             </div>
         `;
     }).join('');
 
-    forecastData.innerHTML = forecastHTML;
+    forecastData.innerHTML = `<div class="forecast-container">${forecastHTML}</div>`;
 }
 
 // Function to fetch and display Air Quality Index (AQI)
