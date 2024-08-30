@@ -109,8 +109,8 @@ fetch-weather-btn img {
 }
 
 .forecast-item img {
-    width: 15px;
-    height: 15px;
+    width: 60px;
+    height: 60px;
     margin-bottom: 10px;
 }
 
