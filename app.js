@@ -1,4 +1,4 @@
-const API_KEY = 'ed821de5720719bdcec0acd34d196aba'; // Replace 'YOUR_API_KEY' with your actual OpenWeatherMap API key.
+const API_KEY = 'ed821de5720719bdcec0acd34d196aba';
 
 // Function to fetch and display current weather
 function fetchCurrentWeather(city) {
