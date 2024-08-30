@@ -1,4 +1,4 @@
-body {
+/* body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -50,4 +50,158 @@ button:hover {
 
 .weather-section h2 {
     margin-top: 0;
+}
+ */
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to bottom, #2ecc71, #3498db);
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.app-container {
+    background: #1abc9c;
+    padding: 20px;
+    border-radius: 15px;
+    width: 300px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+header input[type="text"] {
+    border: none;
+    border-radius: 50px;
+    padding: 10px 15px;
+    width: 70%;
+    margin-right: 10px;
+    font-size: 14px;
+}
+
+header button {
+    background: #ffffff;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+header button img {
+    width: 20px;
+    height: 20px;
+}
+
+.weather-section {
+    margin-bottom: 20px;
+}
+
+.weather-section h2 {
+    margin-bottom: 10px;
+    font-size: 20px;
+    color: #ffffff;
+}
+
+#weather-details {
+    font-size: 16px;
+}
+
+#forecast-data {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#forecast-data .forecast-item {
+    margin-bottom: 10px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    width: 80%;
+}
+
+#forecast-data p {
+    margin: 5px 0;
+}
+
+#aqi-details, #uv-details, #alert-details {
+    font-size: 14px;
+}
+
+footer {
+    display: flex;
+    justify-content: space-around;
+}
+
+footer button {
+    background: #ffffff;
+    border: none;
+    border-radius: 50px;
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    color: #1abc9c;
+}
+
+footer button:hover {
+    background: #16a085;
+    color: #ffffff;
+}
+
+#weather-details p, #aqi-details p, #uv-details p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px 0;
+}
+
+#weather-details p img, #aqi-details p img, #uv-details p img {
+    margin-right: 10px;
+}
+
+.weather-icon {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 10px;
+}
+
+.temperature {
+    font-size: 50px;
+    margin: 10px 0;
+}
+
+.city {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.weather-info {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.weather-info p {
+    font-size: 14px;
+}
+
+.weather-info img {
+    width: 24px;
+    height: 24px;
+    margin-right: 5px;
 }
